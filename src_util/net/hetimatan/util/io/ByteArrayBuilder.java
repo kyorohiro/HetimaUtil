@@ -183,6 +183,53 @@ public class ByteArrayBuilder {
 		return ret;
 	}
 
+	public static long parseLong(byte[] buffer, int byteOrder) {
+		long ret = 0;
+		if (byteOrder == BYTEORDER_BIG_ENDIAN) {
+			ret = ret|((buffer[0]&0xff)<<56);
+			ret = ret|((buffer[1]&0xff)<<48);
+			ret = ret|((buffer[2]&0xff)<<40);
+			ret = ret|((buffer[3]&0xff)<<32);
+			ret = ret|((buffer[4]&0xff)<<24);
+			ret = ret|((buffer[5]&0xff)<<16);
+			ret = ret|((buffer[6]&0xff)<<8);
+			ret = ret|((buffer[7]&0xff)<<0);
+		} else {
+			ret = ret|((buffer[7]&0xff)<<56);
+			ret = ret|((buffer[6]&0xff)<<48);
+			ret = ret|((buffer[5]&0xff)<<40);
+			ret = ret|((buffer[4]&0xff)<<32);
+			ret = ret|((buffer[3]&0xff)<<24);
+			ret = ret|((buffer[2]&0xff)<<16);
+			ret = ret|((buffer[1]&0xff)<<8);
+			ret = ret|((buffer[0]&0xff)<<0);
+		}
+		return ret;
+	}
+
+	public static byte[] parseLong(long value, int byteOrder) {
+		byte[] ret = new byte[8];
+		if (byteOrder == BYTEORDER_BIG_ENDIAN) {
+			ret[0] = ((byte) ((value >> 56) & 0xff));
+			ret[1] = ((byte) ((value >> 48) & 0xff));
+			ret[2] = ((byte) ((value >> 40) & 0xff));
+			ret[3] = ((byte) ((value >> 32) & 0xff));
+			ret[4] = ((byte) ((value >> 24) & 0xff));
+			ret[5] = ((byte) ((value >> 16) & 0xff));
+			ret[6] = ((byte) ((value >> 8) & 0xff));
+			ret[7] = ((byte) ((value >> 0) & 0xff));
+		} else {
+			ret[0] = ((byte) ((value >> 0) & 0xff));
+			ret[1] = ((byte) ((value >> 8) & 0xff));
+			ret[2] = ((byte) ((value >> 16) & 0xff));
+			ret[3] = ((byte) ((value >> 24) & 0xff));
+			ret[4] = ((byte) ((value >> 32) & 0xff));
+			ret[5] = ((byte) ((value >> 40) & 0xff));
+			ret[6] = ((byte) ((value >> 48) & 0xff));
+			ret[7] = ((byte) ((value >> 56) & 0xff));
+		}
+		return ret;
+	}
 	public static byte[] parseShort(int value, int byteOrder) {
 		byte[] ret = new byte[2];
 		if (byteOrder == BYTEORDER_BIG_ENDIAN) {
