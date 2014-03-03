@@ -6,18 +6,49 @@ import java.util.Arrays;
 import java.util.Random;
 
 import net.hetimatan.util.io.ByteArrayBuilder;
+import net.hetimatan.util.url.PercentEncoder;
 
 //rfc 2104
 public class Hmac {
 
 	public static void main(String[] args) {
+		try {
+			String privateKey = "A123456789"+"B123456789"+"123";
+			String openInput = "admin|0";
+			System.out.println("len="+privateKey.length());
+			MessageDigest md;
+			md = MessageDigest.getInstance("SHA1");
+			byte[] output = null;
+			{
+				md.update((privateKey+openInput).getBytes());
+				PercentEncoder encoder = new PercentEncoder();
+				output = md.digest();
+				System.out.println(encoder.encode(output));
+			}
+			{
+				byte[] tmp = new byte[16*4];
+				Arrays.fill(tmp, (byte)0);
+				System.arraycopy((openInput).getBytes(),
+						0, tmp, privateKey.getBytes().length, (openInput).getBytes().length);
+				tmp[tmp.length-1] = (byte)0xF0;
+				md.update(tmp);
+				PercentEncoder encoder = new PercentEncoder();
+				System.out.println(encoder.encode(md.digest()));
+			}
+			
+		} catch(Throwable t) {
+			t.printStackTrace();
+		}
+	}
+	/*
+	{
 		Random r  = new Random(System.currentTimeMillis());
 		byte[] key = 
 				ByteArrayBuilder.parseLong(r.nextLong(), ByteArrayBuilder.BYTEORDER_BIG_ENDIAN);
 		byte[] timestamp = 
 				ByteArrayBuilder.parseLong(System.currentTimeMillis(), ByteArrayBuilder.BYTEORDER_BIG_ENDIAN);
 		
-	}
+	}*/
 	public static final int SHA1 = 0;
 	private int mType = SHA1;
 	public Hmac(int type) {

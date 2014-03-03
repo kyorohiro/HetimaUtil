@@ -6,7 +6,6 @@ import net.hetimatan.io.file.MarkableReader;
 import net.hetimatan.util.event.EventTaskRunner;
 import net.hetimatan.util.io.ByteArrayBuilder;
 
-@Deprecated
 public class LookaheadHttpHeader {
 	public static final int EOF = 0;
 	public static final int CRLF = 1;

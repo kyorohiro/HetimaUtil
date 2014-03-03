@@ -2,7 +2,6 @@ package net.hetimatan.net.http;
 
 import java.io.IOException;
 import java.util.LinkedHashMap;
-import java.util.LinkedList;
 import java.util.Set;
 
 import net.hetimatan.io.file.KyoroFile;

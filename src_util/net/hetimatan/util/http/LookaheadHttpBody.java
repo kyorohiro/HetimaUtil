@@ -6,7 +6,6 @@ import net.hetimatan.io.file.MarkableReader;
 import net.hetimatan.util.event.EventTaskRunner;
 import net.hetimatan.util.io.ByteArrayBuilder;
 
-@Deprecated
 public class LookaheadHttpBody {
 	private MarkableReader mCurrentReader = null;
 	private long mStart = 0;
