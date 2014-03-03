@@ -36,8 +36,19 @@ public class HttpGet {
 	private int mPort = 80;
 	private EventTaskRunner mRunner = null;
 	private HttpGetTaskManager mTaskManager = new HttpGetTaskManager();
+ 
+	private HttpGetListener mListener = null;
+	public HttpGet() throws IOException {
+		this(null);
+	}
 
-	public HttpGet() throws IOException {}
+	public HttpGet(HttpGetListener listener) throws IOException {
+		if(listener == null) {
+			mListener = new HttpGetListener.NullHttpGetListener();
+		} else {
+			mListener = listener;
+		}
+	}
 
 	public EventTaskRunner getRunner() {return mRunner;}
 
@@ -139,20 +150,21 @@ public class HttpGet {
 	public void recvBody() throws IOException, InterruptedException {
 		HttpHistory.get().pushMessage(sId+"#recvBody:"+"\n");
 		mCurrentResponse.readBody();
-
 		try {
-			CashKyoroFile vf = mCurrentResponse.getVF();
-			byte[] buffer = getBody();
-			vf.read(buffer, 0, buffer.length);
-			//System.out.println("@1:"+new String(buffer, 0, mCurrentResponse.getVFOffset()));
-			System.out.println("@2:"+new String(buffer));
-			System.out.println("@3:"+mCurrentResponse.getVFOffset()+","+buffer.length);
-
+			mListener.onReceiveBody(this);
 		} finally {
 			close();
 		}
 	}
 
+	public byte[] getHeader() throws IOException {
+		CashKyoroFile vf = mCurrentResponse.getVF();
+		vf.seek(0);
+		int len = mCurrentResponse.getVFOffset();
+		byte[] buffer = new byte[len];
+		vf.read(buffer, 0, len);
+		return buffer;
+	}
 	//
 	//
 	public byte[] getBody() throws IOException {

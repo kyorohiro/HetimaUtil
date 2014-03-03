@@ -19,7 +19,7 @@ public class CashKyoroFileHelper {
 		do {
 			sID++;
 			GlobalAccessProperty prop = GlobalAccessProperty.getInstance();
-			String pathAsString = prop.get(GATAG_DEFAULTCASH, ".");
+			String pathAsString = prop.get(GATAG_DEFAULTCASH, System.getProperty("java.io.tmpdir"));
 			File dir = new File(pathAsString);
 			base = new File(dir, "virtualFile_"+sID);
 			if(base.exists()) {

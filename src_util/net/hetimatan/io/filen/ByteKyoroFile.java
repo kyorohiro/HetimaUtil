@@ -7,7 +7,6 @@ import java.io.RandomAccessFile;
 
 import net.hetimatan.io.file.KyoroByteOutput;
 import net.hetimatan.io.file.KyoroFile;
-import net.hetimatan.io.filen.CashKyoroFile.MyOutputStream;
 import net.hetimatan.util.io.ByteArrayBuilder;
 
 public class ByteKyoroFile implements KyoroFile, KyoroByteOutput {
