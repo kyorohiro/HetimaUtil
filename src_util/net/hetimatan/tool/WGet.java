@@ -24,10 +24,8 @@ public class WGet {
 					System.out.println("\n-------@2-------\n:"+new String(httpGet.getBody())+"\n-------@/1-------\n:");
 					return false;
 				}
-			});
-			getter.update(args[0]);
-			CloseRunnerTask close = new CloseRunnerTask(null);
-			KyoroSocketEventRunner runner = getter.startTask(null, close);
+			}).update(args[0]);
+			KyoroSocketEventRunner runner = getter.startTask(null, new CloseRunnerTask(null));
 			runner.waitByClose(30000);
 			runner.close();
 		} catch (IOException e) {

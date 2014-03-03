@@ -63,16 +63,17 @@ public class HttpGet {
 		return mCurrentRequest;
 	}
 
-	public void update(String host, String path, int port) throws IOException {
+	public HttpGet update(String host, String path, int port) throws IOException {
 		mHost = host;
 		mPath = path;
 		mPort = port;
 		sId = "[httpget "+mHost+":"+mPort+mPath+"]";
 		HttpHistory.get().pushMessage(sId+"#update:"+"\n");
 		dispose();
+		return this;
 	}
 
-	public void update(String location) throws IOException {
+	public HttpGet update(String location) throws IOException {
 		MarkableFileReader reader = null;
 		try {
 			reader = new MarkableFileReader(location.getBytes());
@@ -81,6 +82,7 @@ public class HttpGet {
 		} finally {
 			reader.close();
 		}
+		return this;
 	}
 
 	// <omake>
