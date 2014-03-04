@@ -4,9 +4,6 @@ import java.io.IOException;
 import java.util.LinkedList;
 
 import net.hetimatan.io.file.KyoroFile;
-import net.hetimatan.io.file.KyoroFileForFiles;
-import net.hetimatan.io.filen.ByteKyoroFile;
-import net.hetimatan.io.filen.CashKyoroFile;
 import net.hetimatan.net.http.task.server.HttpFrontRequestTask;
 import net.hetimatan.net.http.task.server.HttpServerAcceptTask;
 import net.hetimatan.net.http.task.server.HttpServerBootTask;
@@ -15,8 +12,6 @@ import net.hetimatan.util.event.net.io.KyoroSelector;
 import net.hetimatan.util.event.net.io.KyoroServerSocket;
 import net.hetimatan.util.event.net.io.KyoroServerSocketImpl;
 import net.hetimatan.util.event.net.io.KyoroSocket;
-import net.hetimatan.util.http.HttpRequest;
-import net.hetimatan.util.io.ByteArrayBuilder;
 import net.hetimatan.util.log.Log;
 
 
@@ -25,7 +20,6 @@ import net.hetimatan.util.log.Log;
 //
 public class HttpServer {
 	public static final String TAG = "HttpServer";
-
 	public String sId = "[http_server_empty]";
 
 	private LinkedList<HttpServerFront> mClientInfos = new LinkedList<HttpServerFront>();
@@ -53,7 +47,6 @@ public class HttpServer {
 	private HttpServerListener mBase = null;
 	public HttpServer() {
 	}
-
 	public HttpServer(HttpServerListener base) {
 		mBase = base;
 	}
@@ -170,4 +163,19 @@ public class HttpServer {
 		return mRequestRunner;
 	}
 
+	public static class HttpServerEventDispatcher {
+		private LinkedList<HttpServerListener> mObserver = new LinkedList<>();
+		public void dispatchOnBoot(HttpServer server) {
+			for(HttpServerListener o: mObserver) {
+				o.onBoot(server);
+			}
+		}
+		public void addHttpServerListener(HttpServerListener observer) {
+			mObserver.add(observer);
+		}
+		
+		public static interface HttpServerListener {
+			public void onBoot(HttpServer server);
+		}
+	}
 }
