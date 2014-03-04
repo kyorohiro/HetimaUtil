@@ -10,7 +10,9 @@ import net.hetimatan.util.event.net.KyoroSocketEventRunner;
 public class WGet {
 
 	public static void main(String[] args) {
+
 		if(args.length != 1) {
+			System.out.println("java"+WGet.class.getSimpleName()+" http://www.example.com");				
 			return;
 		}
 		System.out.println("start args[0]=" + args[0]);		

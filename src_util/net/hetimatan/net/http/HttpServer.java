@@ -42,15 +42,20 @@ public class HttpServer {
 		return mObserver;
 	}
 
-	//
-	// Task Runner
-	//
 	public KyoroSocketEventRunner getEventRunner() {
 		return mRequestRunner;
 	}
 
 	public KyoroServerSocketImpl getServerSocket() {
 		return (KyoroServerSocketImpl)mServerSocket;
+	}
+
+	private HttpServerListener mBase = null;
+	public HttpServer() {
+	}
+
+	public HttpServer(HttpServerListener base) {
+		mBase = base;
 	}
 
 	public boolean isBinded() {
@@ -124,6 +129,7 @@ public class HttpServer {
 	 * this method is overrided
 	 */
 	public KyoroFile createResponse(HttpServerFront front, KyoroSocket socket, HttpRequest uri) throws IOException {
+		
 		HttpHistory.get().pushMessage(sId+"#createResponse:"+front.sId+"\n");
 		KyoroFile responce = createContent(socket, uri);
 		ByteArrayBuilder builder = createHeader(socket, uri, responce);
