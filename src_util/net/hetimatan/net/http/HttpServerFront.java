@@ -101,7 +101,7 @@ public class HttpServerFront {
 		if(info == null || server == null) {
 			return;
 		}
-		KyoroFile kfiles = server.createResponse(this, info.mSocket, info.mUri);
+		KyoroFile kfiles = server.createResponse(this);
 		kfiles.seek(0);
 		//
 		// todo 
@@ -137,5 +137,13 @@ public class HttpServerFront {
 		mMyTask = null;
 		mKFKSocket = null;
 		mSocket = null;
+	}
+
+	public KyoroSocket getSocket() {
+		return mSocket;
+	}
+
+	public HttpRequest getHttpRequest() {
+		return mUri;
 	}
 }

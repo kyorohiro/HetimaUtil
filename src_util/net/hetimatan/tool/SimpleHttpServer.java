@@ -1,11 +1,13 @@
 package net.hetimatan.tool;
 
 import java.io.IOException;
+
 import net.hetimatan.io.file.KyoroFile;
 import net.hetimatan.io.filen.ByteKyoroFile;
 import net.hetimatan.net.http.HttpHistory;
 import net.hetimatan.net.http.HttpServer;
 import net.hetimatan.net.http.HttpServerFront;
+import net.hetimatan.net.http.HttpServerTemplate;
 import net.hetimatan.util.event.net.io.KyoroSocket;
 import net.hetimatan.util.http.HttpRequestHeader;
 import net.hetimatan.util.http.HttpRequest;
@@ -13,7 +15,7 @@ import net.hetimatan.util.http.HttpResponse;
 import net.hetimatan.util.log.Log;
 
 
-public class SimpleHttpServer extends HttpServer {
+public class SimpleHttpServer extends HttpServerTemplate {
 
 	private static SimpleHttpServer server = null;
 	public static void main(String[] args) {

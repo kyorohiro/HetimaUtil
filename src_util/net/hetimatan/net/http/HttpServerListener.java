@@ -1,8 +1,9 @@
 package net.hetimatan.net.http;
 
+import java.io.IOException;
+
 import net.hetimatan.io.file.KyoroFile;
-import net.hetimatan.util.http.HttpRequest;
 
 public interface HttpServerListener {
-	public KyoroFile onRequest(HttpRequest req);
+	public KyoroFile onRequest(HttpServerFront front) throws IOException;
 }

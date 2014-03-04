@@ -17,7 +17,7 @@ import net.hetimatan.util.http.HttpObjectHelper;
 import net.hetimatan.util.http.HttpRequest;
 
 //@todo
-public class SimpleHttpServer extends HttpServer {
+public class SimpleHttpServer extends HttpServerTemplate {
 
 	private CashKyoroFile mFile = null;
 	private LinkedHashMap<String, String> mMimetype = new LinkedHashMap<String,String>();
