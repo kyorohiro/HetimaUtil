@@ -1560,4 +1560,234 @@ Accept-Encoding: gzip,deflate,sdch
 Accept-Language: ja,en-US;q=0.8,en;q=0.6
 
 
-[httpserver18080]#createResponse:[httpfront:0:0:0:0:0:0:0:1:5
+[httpserver18080]#createResponse:[httpfront:0:0:0:0:0:0:0:1:5[httpserver18080]#startAccept:
+[httpserver18080]#startFront:[httpfront:0:0:0:0:0:0:0:1:57731]
+[httpfront:0:0:0:0:0:0:0:1:57731]:parse request:GET / HTTP/1.1
+Host: localhost:18080
+Connection: keep-alive
+Cache-Control: max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: ja,en-US;q=0.8,en;q=0.6
+
+
+[httpserver18080]#createResponse:[httpfront:0:0:0:0:0:0:0:1:57731],/
+[httpserver18080]#startFront:[httpfront:0:0:0:0:0:0:0:1:57732]
+[httpfront:0:0:0:0:0:0:0:1:57731]#close:
+[httpfront:0:0:0:0:0:0:0:1:57732]:parse request:GET /.settings HTTP/1.1
+Host: localhost:18080
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36
+Referer: http://localhost:18080/
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: ja,en-US;q=0.8,en;q=0.6
+
+
+[httpserver18080]#createResponse:[httpfront:0:0:0:0:0:0:0:1:57732],/.settings
+[httpfront:0:0:0:0:0:0:0:1:57732]#close:
+[httpserver18080]#startFront:[httpfront:0:0:0:0:0:0:0:1:57733]
+[httpserver18080]#startFront:[httpfront:0:0:0:0:0:0:0:1:57734]
+[httpfront:0:0:0:0:0:0:0:1:57733]:parse request:GET /.git HTTP/1.1
+Host: localhost:18080
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36
+Referer: http://localhost:18080/
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: ja,en-US;q=0.8,en;q=0.6
+
+
+[httpserver18080]#createResponse:[httpfront:0:0:0:0:0:0:0:1:57733],/.git
+[httpfront:0:0:0:0:0:0:0:1:57733]#close:
+[httpfront:0:0:0:0:0:0:0:1:57734]:parse request:GET /.git/index HTTP/1.1
+Host: localhost:18080
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36
+Referer: http://localhost:18080/.git
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: ja,en-US;q=0.8,en;q=0.6
+
+
+[httpserver18080]#createResponse:[httpfront:0:0:0:0:0:0:0:1:57734],/.git/index
+[httpfront:0:0:0:0:0:0:0:1:57734]#close:
+[httpserver18080]#startFront:[httpfront:0:0:0:0:0:0:0:1:57735]
+[httpserver18080]#startFront:[httpfront:0:0:0:0:0:0:0:1:57736]
+[httpfront:0:0:0:0:0:0:0:1:57735]:parse request:GET /.project HTTP/1.1
+Host: localhost:18080
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36
+Referer: http://localhost:18080/
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: ja,en-US;q=0.8,en;q=0.6
+
+
+[httpserver18080]#createResponse:[httpfront:0:0:0:0:0:0:0:1:57735],/.project
+[httpfront:0:0:0:0:0:0:0:1:57735]#close:
+[httpserver18080]#startFront:[httpfront:0:0:0:0:0:0:0:1:57737]
+[httpfront:0:0:0:0:0:0:0:1:57736]#close:
+[httpfront:0:0:0:0:0:0:0:1:57737]#close:
+[httpserver18080]#startFront:[httpfront:0:0:0:0:0:0:0:1:57738]
+[httpserver18080]#startFront:[httpfront:0:0:0:0:0:0:0:1:57739]
+[httpfront:0:0:0:0:0:0:0:1:57738]:parse request:GET / HTTP/1.1
+Host: localhost:18080
+Connection: keep-alive
+Cache-Control: max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: ja,en-US;q=0.8,en;q=0.6
+
+
+[httpserver18080]#createResponse:[httpfront:0:0:0:0:0:0:0:1:57738],/
+[httpfront:0:0:0:0:0:0:0:1:57738]#close:
+[httpfront:0:0:0:0:0:0:0:1:57739]#close:
+[httpserver18080]#startAccept:
+[httpserver18080]#startFront:[httpfront:0:0:0:0:0:0:0:1:57741]
+[httpfront:0:0:0:0:0:0:0:1:57741]:parse request:GET / HTTP/1.1
+Host: localhost:18080
+Connection: keep-alive
+Cache-Control: max-age=0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: ja,en-US;q=0.8,en;q=0.6
+
+
+[httpserver18080]#createResponse:[httpfront:0:0:0:0:0:0:0:1:57741],/
+[httpserver18080]#startFront:[httpfront:0:0:0:0:0:0:0:1:57742]
+[httpfront:0:0:0:0:0:0:0:1:57741]#close:
+[httpfront:0:0:0:0:0:0:0:1:57742]:parse request:GET /README.md HTTP/1.1
+Host: localhost:18080
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36
+Referer: http://localhost:18080/
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: ja,en-US;q=0.8,en;q=0.6
+
+
+[httpserver18080]#createResponse:[httpfront:0:0:0:0:0:0:0:1:57742],/README.md
+[httpfront:0:0:0:0:0:0:0:1:57742]#close:
+[httpserver18080]#startFront:[httpfront:0:0:0:0:0:0:0:1:57743]
+[httpserver18080]#startFront:[httpfront:0:0:0:0:0:0:0:1:57744]
+[httpfront:0:0:0:0:0:0:0:1:57743]:parse request:GET /test_util HTTP/1.1
+Host: localhost:18080
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36
+Referer: http://localhost:18080/
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: ja,en-US;q=0.8,en;q=0.6
+
+
+[httpserver18080]#createResponse:[httpfront:0:0:0:0:0:0:0:1:57743],/test_util
+[httpfront:0:0:0:0:0:0:0:1:57743]#close:
+[httpfront:0:0:0:0:0:0:0:1:57744]:parse request:GET /test_util/net HTTP/1.1
+Host: localhost:18080
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36
+Referer: http://localhost:18080/test_util
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: ja,en-US;q=0.8,en;q=0.6
+
+
+[httpserver18080]#createResponse:[httpfront:0:0:0:0:0:0:0:1:57744],/test_util/net
+[httpfront:0:0:0:0:0:0:0:1:57744]#close:
+[httpserver18080]#startFront:[httpfront:0:0:0:0:0:0:0:1:57745]
+[httpfront:0:0:0:0:0:0:0:1:57745]:parse request:GET /test_util/net/hetimatan HTTP/1.1
+Host: localhost:18080
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36
+Referer: http://localhost:18080/test_util/net
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: ja,en-US;q=0.8,en;q=0.6
+
+
+[httpserver18080]#createResponse:[httpfront:0:0:0:0:0:0:0:1:57745],/test_util/net/hetimatan
+[httpfront:0:0:0:0:0:0:0:1:57745]#close:
+[httpserver18080]#startFront:[httpfront:0:0:0:0:0:0:0:1:57746]
+[httpfront:0:0:0:0:0:0:0:1:57746]:parse request:GET /test_util/net/hetimatan/util HTTP/1.1
+Host: localhost:18080
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36
+Referer: http://localhost:18080/test_util/net/hetimatan
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: ja,en-US;q=0.8,en;q=0.6
+
+
+[httpserver18080]#createResponse:[httpfront:0:0:0:0:0:0:0:1:57746],/test_util/net/hetimatan/util
+[httpfront:0:0:0:0:0:0:0:1:57746]#close:
+[httpserver18080]#startFront:[httpfront:0:0:0:0:0:0:0:1:57747]
+[httpfront:0:0:0:0:0:0:0:1:57747]:parse request:GET /test_util/net/hetimatan/util/http HTTP/1.1
+Host: localhost:18080
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36
+Referer: http://localhost:18080/test_util/net/hetimatan/util
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: ja,en-US;q=0.8,en;q=0.6
+
+
+[httpserver18080]#createResponse:[httpfront:0:0:0:0:0:0:0:1:57747],/test_util/net/hetimatan/util/http
+[httpfront:0:0:0:0:0:0:0:1:57747]#close:
+[httpserver18080]#startFront:[httpfront:0:0:0:0:0:0:0:1:57748]
+[httpfront:0:0:0:0:0:0:0:1:57748]:parse request:GET /test_util/net/hetimatan/util/http/TestForHttpResponse.java HTTP/1.1
+Host: localhost:18080
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36
+Referer: http://localhost:18080/test_util/net/hetimatan/util/http
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: ja,en-US;q=0.8,en;q=0.6
+
+
+[httpserver18080]#createResponse:[httpfront:0:0:0:0:0:0:0:1:57748],/test_util/net/hetimatan/util/http/TestForHttpResponse.java
+[httpfront:0:0:0:0:0:0:0:1:57748]#close:
+[httpserver18080]#createResponse:[httpfront:0:0:0:0:0:0:0:1:57748],/test_util/net/hetimatan/util/http/TestForHttpResponse.java
+[httpserver18080]#startFront:[httpfront:0:0:0:0:0:0:0:1:57749]
+[httpserver18080]#startFront:[httpfront:0:0:0:0:0:0:0:1:57750]
+[httpfront:0:0:0:0:0:0:0:1:57749]:parse request:GET /test_util/net/hetimatan/util/http/TestForHttpRequestUri.java HTTP/1.1
+Host: localhost:18080
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36
+Referer: http://localhost:18080/test_util/net/hetimatan/util/http
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: ja,en-US;q=0.8,en;q=0.6
+
+
+[httpserver18080]#createResponse:[httpfront:0:0:0:0:0:0:0:1:57749],/test_util/net/hetimatan/util/http/TestForHttpRequestUri.java
+[httpfront:0:0:0:0:0:0:0:1:57749]#close:
+[httpserver18080]#startFront:[httpfront:0:0:0:0:0:0:0:1:57751]
+[httpfront:0:0:0:0:0:0:0:1:57750]:parse request:GET /test_util/net/hetimatan/util/http/TestForHttpRequestLine.java HTTP/1.1
+Host: localhost:18080
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36
+Referer: http://localhost:18080/test_util/net/hetimatan/util/http
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: ja,en-US;q=0.8,en;q=0.6
+
+
+[httpserver18080]#createResponse:[httpfront:0:0:0:0:0:0:0:1:57750],/test_util/net/hetimatan/util/http/TestForHttpRequestLine.java
+[httpfront:0:0:0:0:0:0:0:1:57750]#close:
+[httpserver18080]#startFront:[httpfront:0:0:0:0:0:0:0:1:57752]
+[httpfront:0:0:0:0:0:0:0:1:57751]:parse request:GET /test_util/net/hetimatan/util/http/TestForHttpRequest.java HTTP/1.1
+Host: localhost:18080
+Connection: keep-alive
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.146 Safari/537.36
+Referer: http://localhost:18080/test_util/net/hetimatan/util/http
+Accept-Encoding: gzip,deflate,sdch
+Accept-Language: ja,en-US;q=0.8,en;q=0.6
+
+
+[httpserver18080]#createResponse:[httpfront:0:0:0:0:0:0:0:1:57751],/test_util/net/hetimatan/util/http/TestForHttpRequest.java
+[httpfront:0:0:0:0:0:0:0:1:57751]#close:

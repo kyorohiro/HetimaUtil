@@ -1,6 +1,7 @@
 package net.hetimatan.net.http.task.server;
 
 
+import java.io.IOException;
 import java.lang.ref.WeakReference;
 
 import net.hetimatan.net.http.HttpServerFront;
@@ -27,9 +28,12 @@ public class HttpFrontRequestTask extends EventTask {
 		if(info == null) {
 			return;
 		} 
-		if(info.isClosed()) {
-			return;
+		try {
+			info.executeFrontWork();
+		} catch(IOException e) {
+			if(!info.isClosed()) {
+				throw e;
+			}
 		}
-		info.executeFrontWork();
 	}
 }
