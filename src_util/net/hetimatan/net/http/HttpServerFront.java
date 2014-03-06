@@ -24,6 +24,7 @@ public class HttpServerFront {
 
 	public String sId = ""; 
 	public long sTimeout = 10*1024;
+	private boolean mIsClose = false;
 
 	private WeakReference<HttpServer> mServer = null;
 	private KyoroSocket mSocket = null;
@@ -121,8 +122,13 @@ public class HttpServerFront {
 		return true;
 	}
 
+	public boolean isClosed() {
+		return mIsClose;
+	}
+
 	public void close() throws IOException {
 		HttpHistory.get().pushMessage(sId+"#close:"+"\n");
+		mIsClose = true;
 		HttpServer server = mServer.get();
 		if(server != null) {
 			server.removeManagedHttpFront(this);

@@ -69,7 +69,7 @@ public class SimpleHttpServer extends HttpServerTemplate {
 
 	public KyoroFile createDirResponse(HttpRequest uri, File path) throws IOException {
 		CashKyoroFile content = new CashKyoroFile(1024);
-		content.addChunk(("<html><head>"+uri.getLine().getMethod()+"</head><body>").getBytes());
+		content.addChunk(("<html><head><title>"+uri.getLine().getMethod()+"</title></head><body>").getBytes());
 		
 		for(File f:path.listFiles()) {
 			String l = "http://"+uri.getHeaderValue("Host")+f.getCanonicalPath().substring(mRootDir.getCanonicalPath().length());
