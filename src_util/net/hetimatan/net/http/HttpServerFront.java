@@ -133,7 +133,9 @@ public class HttpServerFront {
 		if(mCurrentReader != null) {
 			mCurrentReader.close();
 		}
-		mMyTask.clear();
+		if(mMyTask != null) {
+			mMyTask.clear();
+		}
 		mMyTask = null;
 		mKFKSocket = null;
 		mSocket = null;

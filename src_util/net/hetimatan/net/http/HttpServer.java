@@ -129,7 +129,6 @@ public class HttpServer {
 		}
 	}
 
-
 	public void addManagedHttpFront(HttpServerFront front) {
 		if(mClientInfos != null && front != null) {
 			mClientInfos.addLast(front);

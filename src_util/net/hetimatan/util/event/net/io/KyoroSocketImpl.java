@@ -46,6 +46,9 @@ public class KyoroSocketImpl extends KyoroSocket {
 	public int read(byte[] output, int start, int length) throws IOException {
 		ByteBuffer buffer = ByteBuffer.allocate(length);
 		int len = 0;
+		if(mSocketChannel == null) {
+			return -1;
+		}
 		len = mSocketChannel.read(buffer);
 		if (len < 0) {
 			mIsEOF = true;
